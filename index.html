@@ -10,14 +10,34 @@
       div#sq_model {
       display:none;
       }
+
+      div.button button {
+      border-style:none;
+      background:#f0f0f0;
+      }
+
+      div.button {
+      vertical-align:middle;
+      text-align:center;
+      background:#f0f0f0;
+      padding:6px;
+      -webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px;
+      border-style:none;
+      }
+
     </style>
   </head>
 
   <body>
     <div class="sq" id="sq_model"><img src="images/images.jpeg"></div>
-    <div id="bt_add"><button>Add</button></div>
-    <div id="bt_rm"><button>Remove</button></div>
-    <div id="bt_clear"><button>Clear All</button></div>
+    <table>
+      <tr>
+        <td><div class="button" id="bt_add"><button>Add</button></div> </td>
+        <td><div class="button" id="bt_rm"><button>Remove</button></div></td>
+        </tr>
+      <tr>
+        <td colspan="2"><div class="button" id="bt_clear"><button>Clear All</button></div></td>
+      </tr>
   </body>
 
     <script src="model.js"></script>
