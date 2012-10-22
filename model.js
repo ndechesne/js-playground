@@ -41,6 +41,9 @@ function sq_down (event) {
 }
 
 function bt_add () {
+    // clear any pending 'remove' action
+    kill = false;
+
     var sq_model = document.getElementById("sq_model");
     var sq_new = sq_model.cloneNode(true);
     sq_new.style.display = "block";
@@ -55,10 +58,24 @@ function bt_rm () {
     kill = true;
 }
 
+function bt_clear () {
+    // clear any pending 'remove' action
+    kill = false;
+
+    var sqs = document.getElementsByClassName('sq');
+    var i = sqs.length;
+    //do not delete sq_model, we are lucky..
+    //... it's always sqs[0]
+    while(i-- > 1) {
+        document.body.removeChild(sqs[i])
+    }
+}
+
 window.onload = function () {
 
     document.getElementById("bt_add").onclick = bt_add;
     document.getElementById("bt_rm").onclick = bt_rm;
+    document.getElementById("bt_clear").onclick = bt_clear;
 
 }
 
