@@ -6,19 +6,18 @@ var moved_sq=null;
 var kill = false;
 
 function sq_up (event) {
-    this.onmousemove = null;
-    this.onmouseup = null;
-    //moved_sq = null;
+    document.onmousemove = null;
+    document.onmouseup = null;
+    moved_sq = null;
 }
-
 
 //TODO: document.body.scrollLeft, document.body.scrollTop
 function sq_move(event) {
 
-    var left = parseInt(this.style.left.replace('px', ''), 10);
-    var top  = parseInt(this.style.top.replace('px', ''), 10);
-    this.style.left = left + event.clientX - x0;
-    this.style.top = top + event.clientY - y0;
+    var left = parseInt(moved_sq.style.left.replace('px', ''), 10);
+    var top  = parseInt(moved_sq.style.top.replace('px', ''), 10);
+    moved_sq.style.left = left + event.clientX - x0;
+    moved_sq.style.top = top + event.clientY - y0;
     x0 = event.clientX;
     y0 = event.clientY;
 }
@@ -33,9 +32,9 @@ function sq_down (event) {
         x0 = event.clientX;
         y0 = event.clientY;
         
-        //moved_sq = this;
-        this.onmousemove = sq_move;
-        this.onmouseup = sq_up;
+        moved_sq = this;
+        document.onmousemove = sq_move;
+        document.onmouseup = sq_up;
     }
     
     return false;
