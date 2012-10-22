@@ -14,10 +14,8 @@ function sq_up (event) {
 //TODO: document.body.scrollLeft, document.body.scrollTop
 function sq_move(event) {
 
-    var left = parseInt(moved_sq.style.left.replace('px', ''), 10);
-    var top  = parseInt(moved_sq.style.top.replace('px', ''), 10);
-    moved_sq.style.left = left + event.clientX - x0;
-    moved_sq.style.top = top + event.clientY - y0;
+    moved_sq.style.left = moved_sq.offsetLeft + event.clientX - x0;
+    moved_sq.style.top = moved_sq.offsetTop + event.clientY - y0;
     x0 = event.clientX;
     y0 = event.clientY;
 }
