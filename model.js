@@ -31,12 +31,12 @@ function sq_down (event) {
     else {
         x0 = event.clientX;
         y0 = event.clientY;
-        
+
         moved_sq = this;
         document.onmousemove = sq_move;
         document.onmouseup = sq_up;
     }
-    
+
     return false;
 }
 
