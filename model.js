@@ -46,8 +46,8 @@ function bt_add () {
     var sq_new = sq_model.cloneNode(true);
     sq_new.style.display = "block";
     sq_new.id = count++;
-    sq_new.style.left = "120px"; //sq_model.style.left;
-    sq_new.style.top = "120px";//sq_model.style.top;
+    sq_new.style.left = "150px";
+    sq_new.style.top = "150px";
     sq_new.onmousedown = sq_down;
     sq_model.parentNode.appendChild(sq_new);
 }
